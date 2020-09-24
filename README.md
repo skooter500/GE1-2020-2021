@@ -50,13 +50,9 @@
 ## Lab
 
 ### Learning Outcomes
+- Install Unity & git for Windows
 - Sign up for the class Facebook page
 - Find the Unity tutorials
-- Test your knowledge of Unity
-- Create gameobjects in the scene view
-- Create gameobjects from code
-- Handle user input
-- Use colliders
 
 ### Instructions
 - Sign up for the [class Facebook page](https://www.facebook.com/groups/2460751797558448)
