@@ -59,7 +59,7 @@
 - Use colliders
 
 ### Instructions
-- Sign up for the [class Facebook page](https://www.facebook.com/groups/407619519952058/)
+- Sign up for the [class Facebook page](https://www.facebook.com/groups/2460751797558448)
 - Install Unity
 - Fork the repository for the course and clone it
 - Check out the [Unity tutorial videos](https://unity3d.com/learn/tutorials)
