@@ -18,8 +18,8 @@
 
 ## Previous years courses
 - 2019-2020
-    https://github.com/skooter500/GE1-2019-2020
-    https://github.com/skooter500/GE2-2019-2020
+    - https://github.com/skooter500/GE1-2019-2020
+    - https://github.com/skooter500/GE2-2019-2020
 - 2018-2019
     - https://github.com/skooter500/GE1-2018-2019
     - https://github.com/skooter500/GE2-2018-2019
