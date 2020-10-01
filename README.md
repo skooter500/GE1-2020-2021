@@ -47,11 +47,6 @@
 
 - [Slides](https://drive.google.com/file/d/1uiPqd1KUUAJwgv56NGR6e5amJMt9uEO2/view?usp=sharing)
 
-## Week 1 - Introduction
-## Lecture
-- [Slides](https://drive.google.com/file/d/14pWZNf2Z-FX096wCLHt9t6tLorS323-k/view?usp=sharing)
-- [Trigonometry Problem Set](https://1.cdn.edl.io/IDqRlI8C9dRkoqehbbdHBrcGT6m87gkCQuMKTkp0U7JvHvuG.pdf)
-
 ## Lab
 - Become familiar with Unity 
 - Use trigonometry and the unit circle to make a generative thing
@@ -95,6 +90,11 @@ git checkout lab1starter
 ```IN.worldPos.x``` and ```IN.worldPos.y``` (the vertex x and y) and some functions you can use sqrt, pow, abs. And the modulus operator %
 - You can also use the built in variable _Time that gives the time in seconds since the program started. It's a float.
 - If all goes well, you should be able to create the effect in the video.
+
+## Week 1 - Introduction
+## Lecture
+- [Slides](https://drive.google.com/file/d/14pWZNf2Z-FX096wCLHt9t6tLorS323-k/view?usp=sharing)
+- [Trigonometry Problem Set](https://1.cdn.edl.io/IDqRlI8C9dRkoqehbbdHBrcGT6m87gkCQuMKTkp0U7JvHvuG.pdf)
 
 ### Learning Outcomes
 - Install Unity & git for Windows
