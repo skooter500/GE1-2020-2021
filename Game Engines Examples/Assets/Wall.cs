@@ -11,13 +11,19 @@ public class Wall : MonoBehaviour
     {
         int halfWidth = width / 2;
 
-        for(int i = -halfWidth ; i < halfWidth ; i ++)
+        for(int j = 0 ; j < height ; j ++)
         {
-            GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            cube.transform.position = new Vector3(i, 0.5f, 0);
-            cube.GetComponent<Renderer>().material.color = 
-                Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1);
-            cube.AddComponent<Rigidbody>();
+            for(int i = -halfWidth ; i < halfWidth ; i ++)
+            {
+                GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                Vector3 pos = transform.TransformPoint(new Vector3(i, 0.5f + j, 0));
+                cube.transform.position = pos;
+                cube.transform.rotation = transform.rotation;
+                cube.GetComponent<Renderer>().material.color = 
+                    Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1);
+                cube.AddComponent<Rigidbody>();
+                cube.transform.parent = this.transform;
+            }
         }
     }
 
