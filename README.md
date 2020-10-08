@@ -43,53 +43,37 @@
 - Week 5 - CA proposal & Git repo - 10%
 - Week 13 - CA Submission & Demo - 40%
 
-## Week 2 - Trigonometry & Co-routines, materials & shaders
+## Week 2 - Vectors
+## Lecture
+- [Slides]()
 
-- [Slides](https://drive.google.com/file/d/1uiPqd1KUUAJwgv56NGR6e5amJMt9uEO2/view?usp=sharing)
+## Week 2 - Tank game, trigonometry & vectors
+- [Slides](https://drive.google.com/file/d/14pWZNf2Z-FX096wCLHt9t6tLorS323-k/view?usp=sharing)
+- [Trigonometry problem set](https://1.cdn.edl.io/IDqRlI8C9dRkoqehbbdHBrcGT6m87gkCQuMKTkp0U7JvHvuG.pdf)
 
 ## Lab
-- Become familiar with Unity 
-- Use trigonometry and the unit circle to make a generative thing
-- Modify a shader
+### Learning Outcomes
+- Build a simple agent with perception
+- Develop computation thinking
+- Use trigonometry
+- Use vectors
+- Use the Unity API
+- Practice C#
 
-## Instructions
+### Instructions
 
-This is a screenshot of the first part of what you guys can make today:
+Today you will be making this:
 
-![Mandala](images/mandala1.png)
+[![YouTube](http://img.youtube.com/vi/kC_W1WBB7uY/0.jpg)](http://www.youtube.com/watch?v=kC_W1WBB7uY)
 
-And this is a video of part two, which involves modifying a shader to generate the colours:
+What is happening:
+- The red tank has a script attached that has radius and numWaypoints fields that control the generation of waypoints in a circle around it. It draws sphere gizmos so you can see where the waypoints will be.
+- The red tank will follow the waypoints starting at the 0th one and looping back when it reaches the last waypoint.
+- The red tank prints the messages using the Unity GUI system to indicate:
+    - Whether the blue tank is in front or behind
+    - Whether the front tank is inside a 45 degree FOV
+    - Use the [Unity reference](unityref.md) to figure out what API's to call!
 
-[![Video](http://img.youtube.com/vi/tL6ux8isdgY/0.jpg)](http://www.youtube.com/watch?tL6ux8isdgY)
-
-- First make sure your fork is updated so you get the latest branches from the upstream.
-- Switch to the lab1starter branch:
-
-```bash
-git checkout lab1starter
-```
-
-### Part A
-
-- Open the scene trigscene and check out the hierarchy and the position and orientation of the camera & the generator.
-- Add a new script to the Generator gameobject called Generator
-- Add public fields for rings - the number of rings to create and for the prefab to use. 
-- Drag the prefab from the project onto the field in the Unity editor
-- Now here is the challenge! Write code in the Start method to instantiate instances of the prefab in rings, centred at 0,0,0 on the X-Y plane This will be a nested for loop. But I suggest you try and create one ring first (in a loop) and then enclose that loop in an outer loop to create multiple rings.
-- You will see that the inside ring had 5 objects and the subsequent rings increase the number of objects so that the spacing on each ring is equal. You can use the circumference of a circle equation to calculate the number of objects each circle should contain.
-- Add a script to the prefab so that it rotates around the Y axis. You should add a field for the rotation speed.
-- See if you can figure out how set colours on each loop so that the colours span the hue colour space from 0-1
-
-### Part B
-
-- Create a material called ColorMaterial and assign the shader Custom/ColorShader to the material.
-- Assign the material to the prefab by dropping it on the prefab.
-- Open up the file ColorShader.shader and look for the function ```void surf (Input IN, inout SurfaceOutputStandard o)```
-- You should assign the variable hue to a value between 0 and 1 based on the distance of the vertex from the origin. 
-- You have some input variables to work with which are:
-```IN.worldPos.x``` and ```IN.worldPos.y``` (the vertex x and y) and some functions you can use sqrt, pow, abs. And the modulus operator %
-- You can also use the built in variable _Time that gives the time in seconds since the program started. It's a float.
-- If all goes well, you should be able to create the effect in the video.
 
 ## Week 1 - Introduction
 ## Lecture
