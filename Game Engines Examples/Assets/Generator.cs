@@ -10,7 +10,7 @@ public class Generator : MonoBehaviour
     void Start()
     {
         int radius = 1;
-        for(int i = 0 ; i < loops ; i ++)
+        for(int i = 1 ; i <= loops ; i ++)
         {
             int numPrefabs = (int)(2.0f * Mathf.PI * i * radius);
             float theta = Mathf.PI * 2.0f / ((float)numPrefabs);
