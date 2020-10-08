@@ -11,6 +11,14 @@ public class FPSController : MonoBehaviour
 
     public bool allowPitch = true;
 
+    public GUIStyle style;
+
+    public void OnGUI()
+    {
+        GUI.color = Color.white;
+        GUI.Label(new Rect(50, 50, 500, 300), "Dot:" + invcosTheta1, style);
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -32,10 +40,10 @@ public class FPSController : MonoBehaviour
         transform.rotation = rot * transform.rotation;
     }
 
+    float invcosTheta1;
+
     void Pitch(float angle)
-    {
-        float invcosTheta1 = Vector3.Dot(transform.forward, Vector3.up);
-        
+    {        
         float threshold = 0.95f;
         if ((angle > 0 && invcosTheta1 < (-threshold)) || (angle < 0 && invcosTheta1 > (threshold)))
         {
@@ -71,6 +79,8 @@ public class FPSController : MonoBehaviour
     {
         float mouseX, mouseY;
         float speed = this.speed;
+
+        invcosTheta1 = Vector3.Dot(transform.forward, Vector3.up);
 
         float runAxis = 0; // Input.GetAxis("Run Axis");
 
