@@ -61,7 +61,7 @@ Shader "Custom/ColorShader" {
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 			// Albedo comes from a texture tinted by color
 			float dist = sqrt(pow(IN.worldPos.x,2) + pow(IN.worldPos.y, 2));
-			float hue = abs(((dist / 10.0f) - _Time))  % 1.0;
+			float hue = abs(((dist / 10.0f) - _Time*5.0))  % 1.0;
 			fixed3 c = hsv_to_rgb(float3(hue, 1, 1));
 			o.Albedo = c.rgb;
 			// Metallic and smoothness come from slider variables
