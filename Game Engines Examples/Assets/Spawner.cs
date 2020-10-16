@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
 
     public int spawnRate = 5;
 
+    public int max = 10;
+
     void Spawn()
     {
         GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -19,6 +21,8 @@ public class Spawner : MonoBehaviour
         cube.AddComponent<Rigidbody>();
         cube.transform.position = transform.TransformPoint(pos);
 
+        cube.transform.parent = this.transform;
+        cube.tag = "Cube";
     }
     // Start is called before the first frame update
     void Start()
@@ -31,11 +35,27 @@ public class Spawner : MonoBehaviour
         StartCoroutine(SpawnCoroutine());
     }
 
+    int count = 0;
+
     System.Collections.IEnumerator SpawnCoroutine()
     {
         while(true)
         {
             Spawn();
+            
+            /*
+            count ++;
+            if (transform.childCount == max)
+            {
+                break;
+            }
+            */
+            GameObject[] cubes =
+                GameObject.FindGameObjectsWithTag("Cube");
+            if (cubes.Length == max)
+            {
+                break;
+            }
             yield return new WaitForSeconds(1.0f / (float)spawnRate); 
         }
     }
