@@ -6,6 +6,9 @@ public class Shooting : MonoBehaviour
 {
     public Transform spawnPoint;
     public GameObject bulletPrefab; 
+
+    public float fireRate = 3;
+
     // Start is called before the first frame update
     void Start()
     {

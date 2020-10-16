@@ -49,8 +49,14 @@ public class AITank : MonoBehaviour
             current = (current + 1) % waypoints.Count;
         }
         toTarget.Normalize();
-        transform.forward = toTarget;
+        //transform.forward = toTarget;
+        
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(toTarget), Time.deltaTime * 5.0f);
+        
         transform.Translate(toTarget * speed * Time.deltaTime, Space.World);
+
+
+        //transform.position = Vector3.Lerp(transform.position, waypoints[current], Time.deltaTime);
 
         Vector3 toPlayer = player.position - transform.position;
         if (Vector3.Dot(transform.forward, toPlayer) < 0)
@@ -63,6 +69,9 @@ public class AITank : MonoBehaviour
         }
         float angle = Mathf.Acos(Vector3.Dot(transform.forward, toPlayer) / toPlayer.magnitude) * Mathf.Rad2Deg;
         GameManager.Log("Angle to player 1: " + angle);
+        
+        float a = Vector3.Angle(transform.forward, toPlayer);
+        
         if (angle < 45)
         {
             GameManager.Log("Player is inside the FOV");
