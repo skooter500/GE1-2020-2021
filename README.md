@@ -58,9 +58,22 @@ What is happening:
 - Enemies spawn at a rate of 1 enemy per second
 - Enemies fall from the sky and land on the ground
 - There are a maximum of 5 enemies at any time
-- When the player hits an enemy it "explodes" (all the parts break apart)
-- After 4 seconds, it sinks into the ground
+- After 4 seconds, it sinks into the ground. You can disable the collider on the tank and set drag to be 1
 - After seven seconds, it gets removed from the scene
+
+Advanced!
+
+- When the player hits an enemy it "explodes" (all the parts break apart)
+- To implement this you will have to do a few things:
+- Iterate over all the child transforms to get access to the turret using:
+
+    ```foreach (Transform t in this.GetComponentsInChildren<Transform>())
+    ```
+- You could also use ```transform.getChild(0)```
+- Add a rigidbody to the turret
+- Set the useGravity and isKinematic fields on the rigidbody appropriately
+- Add a random velocity 
+
 
 ## Lab
 
@@ -72,7 +85,7 @@ Clone the repo for the course and make sure you start from the master branch. Cr
 
 Open up the lab2 scene. There is the coloured tank following it's circular path (solution from last week). We are going to add a control orb to the red tank so that the player can enter the orb and take control of the red tank.
 
-- Use the orb prefab and attach it at an appropriate position on the red tank
+- Use the dode and attach it at an appropriate position on the red tank
 - Add the TankController script to the coloured tank and set it to be disabled
 - Make a script called RotateMe that performs a local rotation and attach it to the orb so that the orb spins by itself
 - Add a sphere collider to the orb and set the isTrigger flag to be true
