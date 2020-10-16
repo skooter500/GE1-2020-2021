@@ -43,9 +43,55 @@
 - Week 5 - CA proposal & Git repo - 10%
 - Week 13 - CA Submission & Demo - 40%
 
-## Week 2 - Vectors
+## Week 3 - Coroutines, colliders and triggers
 ## Lecture
-- [Slides]()
+
+Lets make this:
+
+[![YouTube](http://img.youtube.com/vi/HJP7AO8pCyM/0.jpg)](http://www.youtube.com/watch?v=HJP7AO8pCyM)
+
+Clone the repo for the course and make sure you start from the master branch. Create a branch for todays solution (call it lab4)
+
+What is happening:
+
+- The green tank is the player. The blue tanks are the "enemies"
+- Enemies spawn at a rate of 1 enemy per second
+- Enemies fall from the sky and land on the ground
+- There are a maximum of 5 enemies at any time
+- When the player hits an enemy it "explodes" (all the parts break apart)
+- After 4 seconds, it sinks into the ground
+- After seven seconds, it gets removed from the scene
+
+## Lab
+
+Your task today is to recreate this system from Infinite Forms:
+
+[![YouTube](http://img.youtube.com/vi/wvu5DuJydKY/0.jpg)](http://www.youtube.com/watch?v=wvu5DuJydKY)
+
+Clone the repo for the course and make sure you start from the master branch. Create a branch for todays solution (call it lab3)
+
+Open up the lab2 scene. There is the coloured tank following it's circular path (solution from last week). We are going to add a control orb to the red tank so that the player can enter the orb and take control of the red tank.
+
+- Use the orb prefab and attach it at an appropriate position on the red tank
+- Add the TankController script to the coloured tank and set it to be disabled
+- Make a script called RotateMe that performs a local rotation and attach it to the orb so that the orb spins by itself
+- Add a sphere collider to the orb and set the isTrigger flag to be true
+- Add a script called OrbController to the orb and add methods for OnTriggerEnter and OnTriggerStay. OnTriggerEnter gets called on the script whenever the attached collider overlaps with another collider. OnTriggerStay gets called once per frame so long as the collider is still overlapping.
+- In OnTriggerEnter you need to:
+    - Check you are colliding with the player
+    - If so, disable the FPS Controller on the player and enable the TankController script on the tank
+    - Disable the EnemyTankController on the Enemy Tank
+    - Disable the RotateMe script on the orb
+- In OnTriggetStay you need to:    
+    - Check you are colliding with the player
+    - Lerp the camera position and slerp the camera rotation
+    - Check for the space key, if pressed this frame:
+        - Disable the TankController on the tank
+        - Enable the EnemyTankController
+        - Enable the Tank controller
+        - Enable the RotateMe script
+
+I may have left out some steps, but you can figure out the rest yourself
 
 ## Week 2 - Tank game, trigonometry & vectors
 - [Slides](https://drive.google.com/file/d/14pWZNf2Z-FX096wCLHt9t6tLorS323-k/view?usp=sharing)
