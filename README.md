@@ -51,23 +51,22 @@ Your task today is to recreate this system from Infinite Forms:
 
 [![YouTube](http://img.youtube.com/vi/wvu5DuJydKY/0.jpg)](http://www.youtube.com/watch?v=wvu5DuJydKY)
 
-Clone the repo for the course and make sure you start from the master branch. Create a branch for todays solution (call it lab4)
+Update your fork from my master branch repo and make sure you start from the master branch. Create a branch for todays solution (call it lab4)
 
-Open up the lab2 scene. There is the coloured tank following it's circular path (solution from 2 weeks ago). We are going to add a control orb to the red tank so that the player can enter the orb and take control of the red tank.
+Open up the lab4 scene. There is the coloured tank following it's circular path (solution from 2 weeks ago). We are going to add a control orb to the red tank so that the player can enter the orb and take control of the red tank.
 
-- Use the dodecehedron and attach it at an appropriate position on the red tank
-- Add the TankController script to the coloured tank and set it to be disabled
+- Use the dodecehedron and attach it at an appropriate position on the red tank. You can add the transparent material to the dodecahedron
 - Make a script called RotateMe that performs a local rotation and attach it to the orb so that the orb spins by itself
 - Add a sphere collider to the orb and set the isTrigger flag to be true
 - Add a script called OrbController to the orb and add methods for OnTriggerEnter and OnTriggerStay. OnTriggerEnter gets called on the script whenever the attached collider overlaps with another collider. OnTriggerStay gets called once per frame so long as the collider is still overlapping.
 - In OnTriggerEnter you need to:
-    - Check you are colliding with the player
-    - If so, disable the FPS Controller on the player and enable the TankController script on the tank
+    - Check you are colliding with the MainCamera (Use tags!)
+    - If so, disable the FPS Controller on the MainCamera and enable the TankController script on the tank
     - Disable the EnemyTankController on the Enemy Tank
     - Disable the RotateMe script on the orb
 - In OnTriggetStay you need to:    
     - Check you are colliding with the player
-    - Lerp the camera position (Vector3.Lerp) and slerp Quaternion.Slerp) the camera rotation
+    - Lerp the camera position (Vector3.Lerp) and slerp the camera so that it points forward) (Quaternion.Slerp) 
     - Check for the space key, if pressed this frame:
         - Disable the TankController on the tank
         - Enable the EnemyTankController
@@ -75,7 +74,6 @@ Open up the lab2 scene. There is the coloured tank following it's circular path 
         - Enable the RotateMe script
 
 I may have left out some steps, but you can figure out the rest yourself
-
 
 ## Week 3 - Coroutines, colliders and triggers
 ## Lecture
