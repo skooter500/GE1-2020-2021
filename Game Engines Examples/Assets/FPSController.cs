@@ -30,7 +30,7 @@ public class FPSController : MonoBehaviour
 
     void Yaw(float angle)
     {
-        Quaternion rot = Quaternion.AngleAxis(angle, Vector3.up);
+        Quaternion rot = Quaternion.AngleAxis(angle, transform.up);
         transform.rotation = rot * transform.rotation;
     }
 
