@@ -41,9 +41,14 @@ public class SpineAnimator : MonoBehaviour {
             Transform prev = children[i - 1];
             Transform current = children[i];
             Vector3 wantedPosition = prev.position + ((prev.rotation * offsets[i-1]));
-            Quaternion wantedRotation = prev.rotation;
+            Quaternion wantedRotation = Quaternion.LookRotation(prev.transform.position - current.position, prev.transform.up);
 
-            current.position = Vector3.Lerp(current.position, wantedPosition, Time.deltaTime * damping);
+            Vector3 lerpedPosition = Vector3.Lerp(current.position, wantedPosition, Time.deltaTime * damping);
+            Vector3 clampedOffset = lerpedPosition - prev.position;
+            clampedOffset = Vector3.ClampMagnitude(clampedOffset, offsets[i-1].magnitude);
+            current.position = prev.position + clampedOffset;
+
+
             current.rotation = Quaternion.Slerp(current.rotation, wantedRotation, Time.deltaTime * damping);
         }
     }

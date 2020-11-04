@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offsets: []
   children: []
-  damping: 10
+  damping: 5
   useSpineAnimatorSystem: 0
 --- !u!114 &8495000044086470963
 MonoBehaviour:
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c9899c66cb01a1468cedb51221e5db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numSegments: 10
+  numSegments: 20
   headPrefab: {fileID: 1999619304079410, guid: 81264e62894e18248819cfa2c01686af, type: 3}
   segmentPrefab: {fileID: 1421515949355740, guid: 17e9289f9db72064dbfbba31e791ba5e,
     type: 3}

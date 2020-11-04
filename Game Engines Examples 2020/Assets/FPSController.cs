@@ -58,7 +58,7 @@ public class FPSController : MonoBehaviour
     void Walk(float units)
     {
         Vector3 forward = mainCamera.transform.forward;
-        forward.y = 0;
+        //forward.y = 0;
         forward.Normalize();
         transform.position += forward * units;
     }

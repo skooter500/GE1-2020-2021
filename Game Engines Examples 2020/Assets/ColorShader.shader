@@ -67,7 +67,7 @@ Shader "Custom/ColorShader" {
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
-			o.Alpha = _Fade;
+			o.Alpha = 0.9;
 		}
 		ENDCG
 	}
