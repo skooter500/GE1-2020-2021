@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/trigscene.unity
     guid: fd9bb96ffe2296741a4b13b19b92d4b3
+  - enabled: 1
+    path: Assets/Scenes/spines.unity
+    guid: f7ef14221a1c5ce4294a8b0c6649e465
   m_configObjects: {}

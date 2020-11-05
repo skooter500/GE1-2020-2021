@@ -12,6 +12,7 @@ public class SpineAnimator : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        Cursor.visible = false;
         for (int i = 0; i < transform.childCount; i++)
         {
             Transform current = transform.GetChild(i);
