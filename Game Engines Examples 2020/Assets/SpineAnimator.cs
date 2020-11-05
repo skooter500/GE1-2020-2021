@@ -7,8 +7,6 @@ public class SpineAnimator : MonoBehaviour {
     public List<Transform> children = new List<Transform>();
     public float damping = 10.0f;
 
-    public bool useSpineAnimatorSystem = false;
-
     // Use this for initialization
     void Start()
     {
@@ -25,18 +23,11 @@ public class SpineAnimator : MonoBehaviour {
             }            
             children.Add(current);
         }
-        if (useSpineAnimatorSystem)
-        {
-            SpineAnimatorManager.Instance.AddSpine(this);
-        }
     }
 
     // Update is called once per frame
     void Update () {
-        if (useSpineAnimatorSystem)
-        {
-            return;
-        }
+        
         for (int i = 1; i < children.Count; i++)
         {
             Transform prev = children[i - 1];

@@ -43,6 +43,55 @@
 - Week 5 - CA proposal & Git repo - 10%
 - Week 13 - CA Submission & Demo - 40%
 
+## Week 6 - Spine Animation System example
+
+Today lets make a core component of Infinite Forms, the SpineAnimator system:
+
+[![YouTube](http://img.youtube.com/vi/7azTqY8ADmo/0.jpg)](http://www.youtube.com/watch?v=7azTqY8ADmo)
+
+
+### Questions:
+
+- Look at the code TentacleGenerator1.cs. This generates a tentacle from two prefabs, headPrefab and segmentPrefab.
+- Look at the code in the Awake method and try to comment it with what you think each line is doing
+- Why does the code go into Awake rather than Start?
+- What direction is the tentacle generated? In other words, if the tentaclegenerator was attached to a gameobject located at 0,0,0 with a forward vector of (0, 0 1) would the segments be laid out along the positive or negative Z azis?
+- How exactly is each segment position calculated? What is the maths?
+- Why do it this way rather than use transform.TransformPoint?
+- Where is the head relative to the segments? How is this determined?
+- How is the colour of each segment determined and what would it look like?
+- What would the hierarchy look like after this?
+
+Ok Now look at the code in the Start method of  SpineAnimator.cs
+- Try to comment this code so that you understand what each line is doing
+- This method calculates the Vector3 offsets between each segment and populates the offsets list
+- How is each offset calculated?
+- Why is it necessary to multiply the offset by the inverse quaternion of the previous segment? What is this doing?
+- If there are 10 transforms in the children list, how many transforms will be in the offsets list?
+
+Now look at the Update method. This method lerps the positions and slerps the rotations so that you get "spine like" animation such that each segment "follows" the previous one. 
+- Try to comment this code so that you understand what each line is doing
+- How is the wantedPosition variable calculated? WHat is the maths?
+- How is the wantedRotation calculated. Draw a diagram!
+- How is lerpedPosition calculated?
+- What is the purpose of the clampedOffset variable? 
+- What does changing the damping variable do?
+
+Ok! Your turn to write some code. I have removed some of the code from Start in OctopusGenerator.cs, but left in some comments. The purpose of this class is to generate a series of tentacles arranged in a circle. Ive left some comments in the method to give you some ideas about how to make the tentacles
+
+Now have a look at HeadRotator.cs. This script is attached to the head segment of each of the tentacles and it's purpose is to rotate the head back and forth using a harmonic function. (I.e. A sine wave)
+
+- What is the purpose of the co-routine? What effect will this achieve?
+- Write the code for the Update function. It should perform a harmonic rotation on the gameObject by using transform.localRotation. I've left comments in
+
+If you figure out all of the above! Some extra things to try:
+
+- Make the tentacle segments start big and get smaller as they get towards the end of the tentacle
+- Add a hemisphere to the segment prefabs so they look more "tentacle like"
+- Vary the length and number of tentacles and see what kind of creatures you can create
+
+
+
 ## Week 5 Quaternions
 
 - [Slides on quaternions](https://drive.google.com/file/d/11-KFbodaAl9dRSs9ljzdDyTDp1QWWnsZ/view?usp=sharing)
