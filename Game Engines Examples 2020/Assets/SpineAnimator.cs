@@ -11,13 +11,17 @@ public class SpineAnimator : MonoBehaviour {
     void Start()
     {
         Cursor.visible = false;
+        // This iterates through all the children transforms
         for (int i = 0; i < transform.childCount; i++)
         {
             Transform current = transform.GetChild(i);
             if (i > 0)
             {
                 Transform prev = transform.GetChild(i - 1);
+                // Offset from previous to current
                 Vector3 offset = current.transform.position - prev.transform.position; 
+                
+                // Rotating from world back to local
                 offset = Quaternion.Inverse(prev.transform.rotation) * offset;
                 offsets.Add(offset);                
             }            
@@ -36,6 +40,8 @@ public class SpineAnimator : MonoBehaviour {
             Quaternion wantedRotation = Quaternion.LookRotation(prev.transform.position - current.position, prev.transform.up);
 
             Vector3 lerpedPosition = Vector3.Lerp(current.position, wantedPosition, Time.deltaTime * damping);
+            
+            // Dont move the segments too far apart
             Vector3 clampedOffset = lerpedPosition - prev.position;
             clampedOffset = Vector3.ClampMagnitude(clampedOffset, offsets[i-1].magnitude);
             current.position = prev.position + clampedOffset;

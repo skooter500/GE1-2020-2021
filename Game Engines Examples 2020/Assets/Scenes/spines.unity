@@ -818,22 +818,22 @@ PrefabInstance:
     - target: {fileID: 8495000044086470960, guid: 9e13b2d1609a01249932f1b28460f182,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -1.6257161e-18
       objectReference: {fileID: 0}
     - target: {fileID: 8495000044086470960, guid: 9e13b2d1609a01249932f1b28460f182,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.39718756
       objectReference: {fileID: 0}
     - target: {fileID: 8495000044086470960, guid: 9e13b2d1609a01249932f1b28460f182,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.00000004734844
       objectReference: {fileID: 0}
     - target: {fileID: 8495000044086470960, guid: 9e13b2d1609a01249932f1b28460f182,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9177375
       objectReference: {fileID: 0}
     - target: {fileID: 8495000044086470960, guid: 9e13b2d1609a01249932f1b28460f182,
         type: 3}
@@ -848,7 +848,7 @@ PrefabInstance:
     - target: {fileID: 8495000044086470960, guid: 9e13b2d1609a01249932f1b28460f182,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 46.805
       objectReference: {fileID: 0}
     - target: {fileID: 8495000044086470960, guid: 9e13b2d1609a01249932f1b28460f182,
         type: 3}
@@ -864,6 +864,11 @@ PrefabInstance:
         type: 3}
       propertyPath: damping
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495000044086470963, guid: 9e13b2d1609a01249932f1b28460f182,
+        type: 3}
+      propertyPath: numSegments
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e13b2d1609a01249932f1b28460f182, type: 3}

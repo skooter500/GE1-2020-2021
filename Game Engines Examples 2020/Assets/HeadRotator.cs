@@ -30,6 +30,9 @@ public class HeadRotator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
+        //transform.Translate(0, , 0);
+        transform.localRotation = 
+            Quaternion.AngleAxis(Mathf.Sin(theta) * angle, Vector3.right);
         // Set the transform local rotation field
         // From a Quaternion that rotates around the Vector3.Right vector
         // Use a sine wave function to calculate the angle
@@ -37,5 +40,6 @@ public class HeadRotator : MonoBehaviour {
         // Add to theta according to frequency. 
         // If the frequency was 2 for example, theta needs to go
         // between 0 and 2 PI twice a second
+        theta += Mathf.PI * 2.0f * Time.deltaTime * frequency;
 	}
 }
