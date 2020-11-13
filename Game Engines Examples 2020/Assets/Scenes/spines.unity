@@ -900,7 +900,7 @@ Transform:
   m_GameObject: {fileID: 1402351519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 1865286849}
   m_RootOrder: 0
@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df072a9d8ead8f41aa0e40ab509438b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numTentacles: 8
+  numTentacles: 50
   radius: 1
   tentaclePrefab: {fileID: 8495000044086470961, guid: 9e13b2d1609a01249932f1b28460f182,
     type: 3}
