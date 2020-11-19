@@ -8,6 +8,8 @@ TagManager:
   - Cube
   - Enemy
   - bullet
+  - brick
+  - groundPlane
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
+  - Ground
   - 
   - 
   - 

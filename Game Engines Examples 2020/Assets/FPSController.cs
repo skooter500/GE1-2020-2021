@@ -12,13 +12,6 @@ public class FPSController : MonoBehaviour
     public bool allowPitch = true;
 
     public GUIStyle style;
-
-    public void OnGUI()
-    {
-        GUI.color = Color.white;
-        GUI.Label(new Rect(50, 50, 500, 300), "Dot:" + invcosTheta1, style);
-    }
-
     // Use this for initialization
     void Start()
     {
@@ -77,6 +70,9 @@ public class FPSController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Cursor.lockState = CursorLockMode.Confined;
+  
         float mouseX, mouseY;
         float speed = this.speed;
 
