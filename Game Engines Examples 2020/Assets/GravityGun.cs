@@ -47,13 +47,8 @@ public class GravityGun : MonoBehaviour
                 {
                     if (rch.collider.gameObject.tag != "groundPlane")
                     {
-                        pickedUp = rch.collider.gameObject;
-                        if (isPhisGun)
-                        {
-                            holdDistance = Vector3.Distance(camera.position, pickedUp.transform.position);
-                        } 
+                        pickedUp = rch.collider.gameObject;                        
                     }
-
                 }
             }
             else

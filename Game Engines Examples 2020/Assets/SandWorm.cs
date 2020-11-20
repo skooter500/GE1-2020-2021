@@ -37,14 +37,13 @@ public class SandWorm : MonoBehaviour {
             float mass = 1.0f;
             if (i < headtail)
             {
-
                 r = radius * Mathf.Pow(0.6f, (headtail - i));
                 mass = Mathf.Pow(0.6f, (headtail - i));
             }
             if (i > bodySegments - headtail - 1)
             {
                 r = radius * Mathf.Pow(0.8f, i - (bodySegments - headtail - 1));
-               mass = Mathf.Pow(0.8f, i - (bodySegments - headtail - 1));
+                mass = Mathf.Pow(0.8f, i - (bodySegments - headtail - 1));
             }
             GameObject bodyPart = GameObject.CreatePrimitive(PrimitiveType.Cube);
             Rigidbody rb = bodyPart.AddComponent<Rigidbody>();
@@ -90,7 +89,7 @@ public class SandWorm : MonoBehaviour {
 
     public void Update()
     {
-        if (moving || current != 0)
+        if (moving)
         {
             Animate();
         }
@@ -100,10 +99,7 @@ public class SandWorm : MonoBehaviour {
     {
         float f = force;
         Rigidbody rb = transform.GetChild((int) current).GetComponent<Rigidbody>();
-        /*if (current >= transform.childCount - start)
-        {
-            f *= .05f;
-        }*/
+        
         rb.AddTorque(- rb.transform.right * f);
         current += speed * Time.deltaTime;
 
