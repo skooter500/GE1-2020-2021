@@ -43,6 +43,16 @@
 - Week 5 - CA proposal & Git repo - 10%
 - Week 13 - CA Submission & Demo - 40%
 
+## Week 8 - Unity Physics
+## Lecture
+- [Physics 1](https://drive.google.com/open?id=1rYFVCwmL81sEUD-b-Nt-1lmMKw-4XDi0)
+- [Physics 2](https://drive.google.com/open?id=1ZGWsmDz9uIJEUf2HPBV2JyYxv1RswPar)
+- [Physics 3](https://drive.google.com/open?id=1Tncqb27Cg8LpqHqrtSfcZlgeqTo-HpE8)
+
+## Lab
+- Open up the Physics2 scene from the repo and write code for the methods CreateTower and CreateCar
+- I have left comments in the code explaining what to do
+
 ## Week 7 - Physics 1
 ## Lecture
 - [Physics 1](https://drive.google.com/open?id=1rYFVCwmL81sEUD-b-Nt-1lmMKw-4XDi0)
