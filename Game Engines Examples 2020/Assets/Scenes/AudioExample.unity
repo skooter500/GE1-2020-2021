@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa47a37e00bb91c44ae6682dbcfd180d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useMic: 0
+  useMic: 1
   clip: {fileID: 8300000, guid: 96bc4d7b55fb1f44cbd4843c92f76e71, type: 3}
   amgMic: {fileID: -340459758097474663, guid: 0b465adab6840b644ab834d3c901582f, type: 2}
   amgMaster: {fileID: 24300002, guid: 0b465adab6840b644ab834d3c901582f, type: 2}

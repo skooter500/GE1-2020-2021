@@ -52,11 +52,13 @@ public class AudioAnalyzer : MonoBehaviour {
                 selectedDevice = Microphone.devices[0].ToString();
                 a.clip = Microphone.Start(selectedDevice, true, 1, AudioSettings.outputSampleRate);
                 a.loop = true;
+                a.outputAudioMixerGroup = amgMic;
             }
         }
         else
         {
             a.clip = clip;
+            a.outputAudioMixerGroup = amgMaster;
         }
         a.Play();
     }
@@ -123,7 +125,7 @@ public class AudioAnalyzer : MonoBehaviour {
             }
             average /= (float) width;
             bands[i] = average;
-            //Debug.Log(i + "\t" + start + "\t" + end + "\t" + start * binWidth + "\t" + (end * binWidth));
+            Debug.Log(i + "\t" + start + "\t" + end + "\t" + start * binWidth + "\t" + (end * binWidth));
         }
 
     }
