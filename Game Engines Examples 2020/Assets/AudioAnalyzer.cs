@@ -52,13 +52,11 @@ public class AudioAnalyzer : MonoBehaviour {
                 selectedDevice = Microphone.devices[0].ToString();
                 a.clip = Microphone.Start(selectedDevice, true, 1, AudioSettings.outputSampleRate);
                 a.loop = true;
-                a.outputAudioMixerGroup = amgMic;
             }
         }
         else
         {
             a.clip = clip;
-            a.outputAudioMixerGroup = amgMaster;
         }
         a.Play();
     }
@@ -70,7 +68,8 @@ public class AudioAnalyzer : MonoBehaviour {
     }
     
     /*
-     * This is the method from the youtube video tutorial. 
+     * This is the method from the PeerPlay youtube video tutorial. 
+     * https://www.youtube.com/watch?v=l77pAKrKe5s
      * It has a couple of problems
      * Firstly, there are 7 psychoacoustic bands subbass to brilliance
      * This algorithm creates 8 bands. The frequency range of the 8 bands also 
@@ -131,14 +130,11 @@ public class AudioAnalyzer : MonoBehaviour {
 
     public void GetAmplitude()
     {
-        float total = 0;
-        for(int i = 0 ; i < wave.Length ; i ++)
-            {
-        total += Mathf.Abs(wave[i]);
-        }
-        amplitude = total / wave.Length;
-        smoothedAmplitude = Mathf.Lerp(smoothedAmplitude, amplitude, Time.deltaTime * 3);
-  }
+        // Calculate the average amplitude of the frame of audio
+        // From the wave array
+        // And calculate the lerpedAmplitude
+        // By lerping to it 
+    }
     
     
     // Update is called once per frame
