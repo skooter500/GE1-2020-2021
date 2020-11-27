@@ -43,6 +43,37 @@
 - Week 5 - CA proposal & Git repo - 10%
 - Week 13 - CA Submission & Demo - 40%
 
+## Week 9 - Audio Responsive stuff
+
+Understand the following terms:
+
+- Samples
+- Sample rate
+- Resolution
+- Frequency
+- Harmonics/partials
+- FFT
+- Time domain/frequency domain
+- Frame size
+- Bin width
+
+And the following from Unity:
+
+- AudioSource
+- AudioClip
+- AudioListener
+
+Update your forks and create a branch for your work today!
+
+Modify the AudioAnalyzer class so that it calculates the average amplitude of a frame of samples. Remember samples can be positive or negative, so you have to get the absolute value of the samples
+
+Modify the code in AudioVisualizer2 so that it uses the amplitude to control the rotation of the cubes as per the video:
+
+[![YouTube](http://img.youtube.com/vi/kfiMMA3dam8/0.jpg)](http://www.youtube.com/watch?v=kfiMMA3dam8)
+
+Also modify the code in AudioVisualiser2 so that the cubes start and the same y value like in the video and grow upwards. You will have to to move the y position by half the scale value 
+
+
 ## Week 8 - Unity Physics
 ## Lecture
 - [Physics 1](https://drive.google.com/open?id=1rYFVCwmL81sEUD-b-Nt-1lmMKw-4XDi0)
