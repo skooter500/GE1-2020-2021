@@ -459,7 +459,7 @@ MonoBehaviour:
   holdDistance: 5
   maximumVelocity: 30
   powerFactor: 40
-  isPhisGun: 0
+  isPhisGun: 1
   crosshairImage: {fileID: 2800000, guid: 0983d96785694bd4589a66b2bb91e965, type: 3}
 --- !u!114 &1615961064
 MonoBehaviour:
