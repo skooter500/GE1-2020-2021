@@ -70,8 +70,7 @@ public class AudioAnalyzer : MonoBehaviour {
     }
     
     /*
-     * This is the method from the PeerPlay youtube video tutorial. 
-     * https://www.youtube.com/watch?v=l77pAKrKe5s
+     * This is the method from the youtube video tutorial. 
      * It has a couple of problems
      * Firstly, there are 7 psychoacoustic bands subbass to brilliance
      * This algorithm creates 8 bands. The frequency range of the 8 bands also 
@@ -125,18 +124,21 @@ public class AudioAnalyzer : MonoBehaviour {
             }
             average /= (float) width;
             bands[i] = average;
-            Debug.Log(i + "\t" + start + "\t" + end + "\t" + start * binWidth + "\t" + (end * binWidth));
+            //Debug.Log(i + "\t" + start + "\t" + end + "\t" + start * binWidth + "\t" + (end * binWidth));
         }
 
     }
 
     public void GetAmplitude()
     {
-        // Calculate the average amplitude of the frame of audio
-        // From the wave array
-        // And calculate the lerpedAmplitude
-        // By lerping to it 
-    }
+        float total = 0;
+        for(int i = 0 ; i < wave.Length ; i ++)
+            {
+        total += Mathf.Abs(wave[i]);
+        }
+        amplitude = total / wave.Length;
+        smoothedAmplitude = Mathf.Lerp(smoothedAmplitude, amplitude, Time.deltaTime * 3);
+  }
     
     
     // Update is called once per frame
