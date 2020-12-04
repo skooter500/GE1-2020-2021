@@ -9,6 +9,10 @@ public class InfiniteTerrain : MonoBehaviour {
 
     public int halfTile = 5;
 
+    Dictionary<string, Tile> tiles = new Dictionary<string, Tile>();
+    Queue<GameObject> oldGameObjects = new Queue<GameObject>();
+
+
     // Use this for initialization
     void Start()
     {
@@ -34,9 +38,7 @@ public class InfiniteTerrain : MonoBehaviour {
 
     }
 
-    Queue<GameObject> oldGameObjects = new Queue<GameObject>();
-    Dictionary<string, Tile> tiles = new Dictionary<string, Tile>();
-
+    
     private IEnumerator GenerateWorldAroundPlayer()
     {        
         // Make sure this happens at once at the start
@@ -56,16 +58,20 @@ public class InfiniteTerrain : MonoBehaviour {
                 float updateTime = Time.realtimeSinceStartup;
 
                 //force integer position and round to nearest tilesize
+                // Find which tile the player is on
                 int playerX = (int)(Mathf.Floor((player.transform.position.x) / (quadsPerTile)) * quadsPerTile);
                 int playerZ = (int)(Mathf.Floor((player.transform.position.z) / (quadsPerTile)) * quadsPerTile);
+
                 List<Vector3> newTiles = new List<Vector3>();
                 for (int x = -halfTile; x < halfTile; x++)
                 {
                     for (int z = -halfTile; z < halfTile; z++)
                     {
+                        // The position of the new tile
                         Vector3 pos = new Vector3((x * quadsPerTile + playerX),
                             0,
                             (z * quadsPerTile + playerZ));
+
                         string tilename = "Tile_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
                         if (!tiles.ContainsKey(tilename))
                         {
