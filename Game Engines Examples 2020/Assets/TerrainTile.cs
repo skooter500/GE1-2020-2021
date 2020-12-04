@@ -117,54 +117,24 @@ public class TerrainTile : MonoBehaviour {
     {
         float flatness = 0.2f;
         float noise = Mathf.PerlinNoise(10000 + x / 100, 10000 + y / 100);
-        if (noise > 0.5f + flatness)
-        {
-            noise = noise - flatness;
-        }
-        else if (noise < 0.5f - flatness)
-        {
-            noise = noise + flatness;
-        }
-        else
-        {
-            noise = 0.5f;
-        }
-        return (noise * 300);
+
+        // if the noise function returns values in the flatness range 
+        // USe the value of 0.5
+        // If it falls above the flatness range flatten it
+        // If it falls below the flatness range raise it 
+        return 0; // This is just a placeholder
     }
 
     // Mountains and valleys & bumps
     public static float SampleCell3(float x, float y)
     {
-        float flatness = 0.2f;
-        float noise = Mathf.PerlinNoise(10000 + x / 100, 10000 + y / 100);
-        if (noise > 0.5f + flatness)
-        {
-            noise = noise - flatness;
-        }
-        else if (noise < 0.5f - flatness)
-        {
-            noise = noise + flatness;
-        }
-        else
-        {
-            noise = 0.5f;
-        }
-        
-        return (noise * 300) + (Mathf.PerlinNoise(1000 + x / 5, 100 + y / 5) * 2);
+        // if the noise function returns values in the flatness range 
+        // USe the value of 0.5
+        // If it falls above the flatness range flatten it
+        // If it falls below the flatness range raise it 
+        // Take the flattened noise and add bumpiness with an extra perlin noise function
+        return 0; // This is just a placeholder
     }
     float t = 0;
-	// Update is called once per frame   
-    
-    /*        
-	void Update () {
-        Vector3[] vertices = m.vertices;
-        for (int i = 0; i < vertices.Length; i++)
-        {
-            vertices[i].y = SampleCell(transform.position.x + vertices[i].x, transform.position.z + vertices[i].z + t);
-        }
-        m.vertices = vertices;
-        //t += Time.deltaTime;
-        m.RecalculateNormals();
-	}
-    */
+        
 }

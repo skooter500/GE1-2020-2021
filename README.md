@@ -49,12 +49,12 @@
 
 Try and make this:
 
-[![YouTube](http://img.youtube.com/vi/33idp-_ss8U/0.jpg)](http://www.youtube.com/watch?v=33idp-_ss8U)
+
+[![YouTube](http://img.youtube.com/vi/GZe54KG4jms/0.jpg)](http://www.youtube.com/watch?v=GZe54KG4jms)
 
 
-- Start with the InfiniteTerrain Scene
-- Experiment with adding Perlin noise together at different resolutions
-- Modify the SampleCell function so that if the sample falls within a certain range in the middle, you flatten in. Ie. Make it's value 0.5, and flatten values above and below
+- Start with the InfiniteTerrain2 Scene
+- Modify the SampleCell function so that if the sample falls within a certain range in the middle, you flatten in. Ie. Make it's value 0.5, and flatten or raise values above and below
 - Create a new shader that colours the vertex based on it's Y value (height). If the height falls within different ranges it gets a different colour
 
 

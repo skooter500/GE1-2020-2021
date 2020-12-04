@@ -37,18 +37,11 @@
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 			// Albedo comes from a texture tinted by color
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-			if (IN.worldPos.y > 180)
-			{
-				o.Albedo = fixed3(1, 1, 1);
-			}
-			else if (IN.worldPos.y > 149)
-			{
-				o.Albedo = fixed3(0, 1, 0);
-			}
-			else 
-			{
-				o.Albedo = fixed3(0, 0, 1);
-			}
+			
+			// Check the IN.worldPos.y value against 
+			// and assign o.Albedo like this
+			o.Albedo = fixed3(1, 1, 1);
+			
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
