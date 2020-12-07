@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 0.057
+  m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.097038604, g: 0.11214434, b: 0.13591033, a: 0.057}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 1038981879}
   - component: {fileID: 1038981878}
   m_Layer: 0
-  m_Name: infiniteTerrain1
+  m_Name: infiniteTerrain2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ca88364f12c61428582527ecb6b97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePrefab: {fileID: 1735666773132284, guid: 2b93eb4533cc2fa47b20e0c2dfc57c69, type: 3}
+  tilePrefab: {fileID: 1414062320860028, guid: 1478881f4c6e0c149a58b06e81132e49, type: 3}
   player: {fileID: 1827118467}
   quadsPerTile: 0
   halfTile: 10

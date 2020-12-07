@@ -19,6 +19,7 @@ public class TerrainTile : MonoBehaviour {
               , new SampleCell(SampleCell1)
               , new SampleCell(SampleCell2)
               , new SampleCell(SampleCell3)
+              , new SampleCell(SampleCell4)
     };
 
     public int whichSampler = 0;
@@ -137,6 +138,26 @@ public class TerrainTile : MonoBehaviour {
     {
         float flatness = 0.2f;
         float noise = Mathf.PerlinNoise(10000 + x / 100, 10000 + y / 100);
+        if (noise > 0.5f + flatness)
+        {
+            noise = noise - flatness;
+        }
+        else if (noise < 0.5f - flatness)
+        {
+            noise = noise + flatness;
+        }
+        else
+        {
+            noise = 0.5f;
+        }
+        
+        return (noise * 300) + (Mathf.PerlinNoise(1000 + x / 5, 100 + y / 5) * 2);
+    }
+
+    public static float SampleCell4(float x, float y)
+    {
+        float flatness = 0.2f;
+        float noise = Mathf.PerlinNoise(10000 + x , 10000 + y );
         if (noise > 0.5f + flatness)
         {
             noise = noise - flatness;
