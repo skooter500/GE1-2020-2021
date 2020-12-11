@@ -7,73 +7,68 @@ using UnityEngine.Jobs;
 
 public class SwayJobManager : MonoBehaviour
 {
- 
     TransformAccessArray transforms;
     NativeArray<float> theta;
-    NativeArray<float> frequency;
     NativeArray<float> angle;
+    NativeArray<float> frequency;
 
     int maxJobs = 30000;
     int numJobs = 0;
 
-    JobHandle jobHandle;
- 
+    JobHandle jh;
+
     public static SwayJobManager Instance;
+
+    public void Awake()
+    {
+        transforms = new TransformAccessArray(0, -1);
+        theta = new NativeArray<float>(maxJobs, Allocator.Persistent);
+        angle = new NativeArray<float>(maxJobs, Allocator.Persistent);
+        frequency = new NativeArray<float>(maxJobs, Allocator.Persistent);
+        Instance = this;
+
+    }
 
     public void Add(Sway sway)
     {
         transforms.capacity = transforms.length + 1;
         transforms.Add(sway.transform);
         theta[numJobs] = 0;
-        frequency[numJobs] = sway.frequency;
         angle[numJobs] = sway.angle;
-        numJobs ++;
-    }
-
-
-    public void Awake()
-    {
-        Instance = this;
-
-        transforms = new TransformAccessArray(0);
-        theta = new NativeArray<float>(maxJobs, Allocator.Persistent);
-        frequency = new NativeArray<float>(maxJobs, Allocator.Persistent);
-        angle = new NativeArray<float>(maxJobs, Allocator.Persistent);
-
+        frequency[numJobs] = sway.frequency;
+        numJobs++;
     }
 
     public void OnDestroy()
     {
         transforms.Dispose();
         theta.Dispose();
-        frequency.Dispose();
         angle.Dispose();
+        frequency.Dispose();
     }
 
- 
- 
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
-        jobHandle.Complete();
+        jh.Complete();
     }
- 
+
     // Update is called once per frame
     void Update()
     {
         var job = new SwayJob()
         {
-            theta = this.theta
-            , frequency = this.frequency
-            , angle = this.angle
-            , timeDelta = Time.deltaTime
+            timeDelta = Time.deltaTime
+            ,angle = this.angle
+            ,frequency = this.frequency
+            ,theta = this.theta
         };
-        jobHandle = job.Schedule(transforms);
+        jh = job.Schedule(transforms);
     }
 }
 
@@ -87,8 +82,9 @@ public struct SwayJob : IJobParallelForTransform
     public void Execute(int i, TransformAccess transform)
     {
         Vector3 right = transform.rotation * Vector3.right;
-        transform.rotation = Quaternion.AngleAxis(Mathf.Sin(theta[i] * angle[i]), right);
+        transform.rotation = Quaternion.AngleAxis(Mathf.Sin(theta[i]) * angle[i], right);
         theta[i] += Mathf.PI * 2.0f * frequency[i] * timeDelta;
     }
 }
+
 
