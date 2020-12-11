@@ -31,5 +31,15 @@ public class SwayJobManager : MonoBehaviour
     }
 }
 
+public struct SwayJob : IJobParallelForTransform
+{
+    public NativeArray<float> theta;
+    public NativeArray<float> angle;
+    public NativeArray<float> frequency;
+    public float timeDelta;
 
+    public void Execute(int i, TransformAccess transform)
+    {
+    }
+}
 
