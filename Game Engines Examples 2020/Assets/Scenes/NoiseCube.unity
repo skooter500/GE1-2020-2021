@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff53e3a89dac9a748a5b18b2a9429639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 15
+  size: 20
   prefab: {fileID: 1440537851}
   gap: 3
 --- !u!4 &1540206132

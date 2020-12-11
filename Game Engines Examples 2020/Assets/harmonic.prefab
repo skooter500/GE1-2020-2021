@@ -108,3 +108,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc63b6c8e8cd35947944061cba10705a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angle: 30
+  frequency: 1
