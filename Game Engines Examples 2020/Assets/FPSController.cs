@@ -15,6 +15,7 @@ public class FPSController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Cursor.visible = false;
         if (mainCamera == null)
         {
             mainCamera = Camera.main.gameObject;

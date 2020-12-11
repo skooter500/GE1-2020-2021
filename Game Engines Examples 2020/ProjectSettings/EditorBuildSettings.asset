@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/NoiseCube.unity
+    guid: e40fd271dfbe9674f9d8bfe0e5ed243b
+  - enabled: 1
     path: Assets/Scenes/infiniteterrain2.unity
     guid: c72801122b39a3343badcd5aefa44a28
   - enabled: 1
