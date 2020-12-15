@@ -1,4 +1,4 @@
-# Music Visualiser Project
+# Project Title
 
 Name:
 
@@ -6,11 +6,9 @@ Student Number:
 
 Class Group:
 
-Project Title:
-
 # Description of the project
 
-# Instructions
+# Instructions for use
 
 # How it works
 
