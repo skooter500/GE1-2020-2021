@@ -14,7 +14,11 @@ Project Title:
 
 # How it works
 
+# References
+
 # What I am most proud of in the assignment
+
+# Proposal submitted earlier can go here:
 
 ## This is how to markdown text:
 
