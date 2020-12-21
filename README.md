@@ -43,6 +43,12 @@
 - Week 5 - CA proposal & Git repo - 10%
 - Week 13 - CA Submission & Demo - 40%
 
+## Week 11 - C# Job System
+- Documentation
+
+[![YouTube](http://img.youtube.com/vi/-czgfgBF210/0.jpg)](http://www.youtube.com/watch?v=-czgfgBF210)
+
+
 ## Week 10 - Infinite Terrain
 
 ## Lab
