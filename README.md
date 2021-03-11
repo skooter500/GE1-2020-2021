@@ -105,6 +105,8 @@ Also modify the code in AudioVisualiser2 so that the cubes start and the same y 
 - Open up the Physics2 scene from the repo and write code for the methods CreateTower and CreateCar
 - I have left comments in the code explaining what to do
 
+[![YouTube](http://img.youtube.com/vi/zgCDuOoTKU8/0.jpg)](http://www.youtube.com/watch?v=zgCDuOoTKU8)
+
 ## Week 7 - Physics 1
 ## Lecture
 - [Physics 1](https://drive.google.com/open?id=1rYFVCwmL81sEUD-b-Nt-1lmMKw-4XDi0)
