@@ -39,6 +39,7 @@ public class FPSController : MonoBehaviour
     void Pitch(float angle)
     {        
         float theshold = 0.95f;
+        invcosTheta1 = Vector3.Dot(transform.forward, Vector3.up);
         if ((angle > 0 && invcosTheta1 < -theshold) || (angle < 0 && invcosTheta1 > theshold))
         {
             return;

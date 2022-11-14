@@ -12,9 +12,7 @@
 
 ## Contact me
 * Email: bryan.duggan@dit.ie
-* Twitter: [@skooter500](http://twitter.com/skooter500)
 * [My website & other ways to contact me](http://bryanduggan.org)
-
 
 ## Previous years courses
 - 2019-2020

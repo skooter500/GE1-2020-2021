@@ -18,7 +18,7 @@ public class Mover : MonoBehaviour
         if (Event.current.type == EventType.Repaint)
         {
             message.Length = 0;
-        }
+        }    
     }
     // Start is called before the first frame update
     void Start()
